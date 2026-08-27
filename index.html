@@ -21,7 +21,12 @@
 
 <header>
 <nav class="container">
-<h2>CK.</h2>
+<div class="logo">
+    <span>C</span>K
+</div>
+<button class="menu-toggle" id="menu-toggle">
+    ☰
+</button>
 
 <ul>
 <li><a href="#about">About</a></li>
@@ -160,22 +165,87 @@ section
 
 <section id="projects" class="container section">
 
-<h2>Featured Projects</h2>
+    <h2>Featured Projects</h2>
 
-<div class="project-card">
+    <div class="projects-grid">
 
-<h3>Tech Portfolio</h3>
+        <!-- Project 1 -->
+         <img src="assets/portfolio-preview.png"
+                 alt="Linux Terminal Project">
 
-<p>
-A modern Linux-focused portfolio showcasing my journey into systems
-and infrastructure engineering.
-</p>
+            <div class="project-content">
 
-<a href="https://github.com/calebkibet05-ops/tech-portfolio" target="_blank">
-View Repository →
-</a>
+                <h3>Tech Portfolio</h3>
 
-</div>
+                <p>
+                    A modern Linux-inspired portfolio featuring a boot sequence,
+                    interactive terminal, and live GitHub statistics.
+                </p>
+
+                <div class="tech-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="https://github.com/calebkibet05-ops/tech-portfolio"
+                       target="_blank"
+                       class="btn secondary">
+                       GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section id="github" class="container section">
+
+    <h2>GitHub Activity</h2>
+
+    <div class="github-grid">
+
+        <div class="github-card">
+            <img src="https://github-readme-stats.vercel.app/api?username=calebkibet05-ops&show_icons=true&theme=tokyonight&hide_border=true"
+                 alt="GitHub Stats">
+        </div>
+
+        <div class="github-card">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=calebkibet05-ops&layout=compact&theme=tokyonight&hide_border=true"
+                 alt="Top Languages">
+        </div>
+
+    </div>
+
+</section>
+<section id="terminal-shell" class="container section">
+
+    <h2>Interactive Linux Terminal</h2>
+
+    <div class="shell">
+
+        <div class="shell-header">
+            <span></span><span></span><span></span>
+        </div>
+
+        <div id="shell-output">
+Welcome to Caleb's Linux Terminal.
+
+Type "help" below.
+        </div>
+
+        <div class="shell-input">
+            <span>$</span>
+            <input id="command-input" type="text" placeholder="Enter a command...">
+        </div>
+
+    </div>
 
 </section>
 

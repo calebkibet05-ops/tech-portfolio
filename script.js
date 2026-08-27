@@ -114,3 +114,77 @@ function bootSequence(){
 }
 
 bootSequence();
+// ===== Interactive Linux Terminal =====
+
+const input = document.getElementById("command-input");
+const output = document.getElementById("shell-output");
+
+const commands = {
+  help: "Available commands:\nabout\nskills\nprojects\ngithub\nclear",
+  about: "Caleb Kibet\nAspiring Systems & Infrastructure Engineer.",
+  skills: "Linux Systems\nNetworking\nCloud\nGit & GitHub",
+  projects: "Tech Portfolio",
+  github: "github.com/calebkibet05-ops"
+};
+
+input.addEventListener("keydown", function(e){
+
+  if(e.key==="Enter"){
+
+    const cmd=input.value.trim().toLowerCase();
+
+    output.textContent+="\n\n$ "+cmd+"\n";
+
+    if(cmd==="clear"){
+      output.textContent="Welcome to Caleb's Linux Terminal.\n\nType \"help\" below.";
+    }else if(commands[cmd]){
+      output.textContent+=commands[cmd];
+    }else{
+      output.textContent+="Command not found.";
+    }
+
+    input.value="";
+
+  }
+
+});
+// ===== Active Navigation =====
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+  let current = "";
+
+  sections.forEach(section => {
+
+    const sectionTop = section.offsetTop - 120;
+
+    if(window.scrollY >= sectionTop){
+      current = section.getAttribute("id");
+    }
+
+  });
+
+  navLinks.forEach(link => {
+
+    link.classList.remove("active");
+
+    if(link.getAttribute("href") === "#" + current){
+      link.classList.add("active");
+    }
+
+  });
+
+});
+// ===== Mobile Menu =====
+
+const menuToggle=document.getElementById("menu-toggle");
+const menu=document.querySelector("nav ul");
+
+menuToggle.addEventListener("click",()=>{
+
+menu.classList.toggle("show");
+
+});
